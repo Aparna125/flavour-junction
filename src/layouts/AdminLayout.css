@@ -1,0 +1,75 @@
+.admin { min-height: 100vh; background: var(--ivory); padding-bottom: 40px; }
+
+/* ---------- Top bar ---------- */
+.admin-top { background: rgba(248, 245, 239, 0.95); border-bottom: 1px solid var(--line); }
+.admin-top__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-brand { display: flex; align-items: center; gap: 12px; }
+.admin-brand__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+}
+.admin-brand__text { display: flex; flex-direction: column; line-height: 1.1; }
+.admin-brand__name { font-family: var(--font-serif); font-size: 1.35rem; }
+.admin-brand__sub { font-size: 0.75rem; color: var(--muted); }
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--ivory);
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Console bar ---------- */
+.console { max-width: 1120px; margin: 16px auto 0; padding: 0 16px; display: grid; gap: 12px; }
+.console__row { display: flex; align-items: center; justify-content: space-between; }
+.console__title { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem; }
+.live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 0 4px rgba(31, 92, 63, 0.15); }
+.console__logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+.console__logout:hover { background: var(--card); }
+
+.console__tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; border-radius: 12px; background: var(--card); }
+.console__tab {
+  padding: 9px 6px;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: background 0.2s, color 0.2s;
+}
+.console__tab:hover { color: var(--forest); }
+.console__tab.active { background: var(--forest); color: var(--ivory); font-weight: 600; }
+
+.admin-content { max-width: 1120px; margin: 0 auto; padding: 20px 16px 0; }
+
+@media (min-width: 900px) {
+  .admin-top__inner { padding: 12px 24px; }
+  .console { padding: 0 24px; grid-template-columns: auto auto; justify-content: space-between; align-items: center; }
+  .console__row { gap: 24px; }
+  .console__tabs { grid-template-columns: repeat(3, 120px); order: 0; }
+  .admin-content { padding: 28px 24px 0; }
+}

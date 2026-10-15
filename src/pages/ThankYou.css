@@ -1,0 +1,219 @@
+.ty {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 16px 100px; /* room for mobile bottom nav */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+/* ---------- Eyebrow ---------- */
+.ty__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a5f2a;
+  font-weight: 500;
+}
+.ty__eyebrow span { width: 44px; height: 1px; background: var(--gold); }
+
+/* ---------- Medal ---------- */
+.medal { position: relative; width: 170px; height: 170px; margin: 10px 0 6px; display: grid; place-items: center; }
+.medal__glow {
+  position: absolute;
+  inset: -34px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 240, 207, 0.55) 0%, rgba(185, 240, 207, 0) 68%);
+}
+.medal__ring {
+  position: relative;
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  padding: 6px;
+  background: var(--ivory);
+  border: 3px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(41, 62, 50, 0.18);
+}
+.medal__core {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #35523f, var(--forest) 70%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+.medal__core::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 110px;
+  background: rgba(185, 240, 207, 0.1);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.medal__core svg { position: relative; }
+
+.medal__spark {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f6dca6;
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+}
+.medal__leaf {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--emerald);
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Heading ---------- */
+.ty__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  line-height: 1.18;
+  color: var(--ink);
+}
+.ty__text { color: var(--muted); font-size: 1.02rem; line-height: 1.6; max-width: 46ch; }
+
+/* ---------- Kitchen note card ---------- */
+.note-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(27, 42, 33, 0.06), 0 10px 28px rgba(27, 42, 33, 0.06);
+  text-align: left;
+  display: grid;
+  gap: 18px;
+}
+.note-card::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #eef6f0;
+  z-index: 0;
+}
+.note-card > * { position: relative; z-index: 1; }
+
+.note-card__top { display: flex; gap: 14px; }
+.note-card__icon {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #eceae3;
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+}
+.note-card__label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.note-card blockquote { margin: 6px 0 8px; font-style: italic; line-height: 1.5; color: var(--ink); }
+.note-card__sign { font-weight: 600; font-size: 0.9rem; }
+
+.summary {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--card);
+  display: grid;
+  gap: 10px;
+}
+.summary > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.summary dt { font-size: 0.88rem; letter-spacing: 0.02em; color: var(--muted); }
+.summary dd { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+.summary__id { font-weight: 700; letter-spacing: 0.04em; font-size: 1.05rem !important; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); }
+.summary__stars { color: var(--gold); gap: 3px !important; }
+.summary__stars strong { margin-left: 6px; color: var(--ink); font-size: 0.95rem; }
+
+/* ---------- Points strip (optional) ---------- */
+.points {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  text-align: left;
+}
+.points__icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f6dca6;
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+}
+.points > div { flex: 1; }
+.points p { font-size: 0.9rem; color: var(--muted); }
+.points__tick { color: var(--emerald); flex: none; }
+
+/* ---------- Buttons ---------- */
+.ty__actions { width: 100%; display: grid; gap: 12px; margin-top: 4px; }
+.btn-main,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-main { background: var(--forest); color: var(--ivory); box-shadow: 0 6px 16px rgba(41, 62, 50, 0.25); }
+.btn-main:hover { background: var(--emerald); }
+.btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.btn-ghost:hover { background: var(--card); }
+
+/* ---------- Social + decoration ---------- */
+.follow { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+.follow a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eceae3;
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+.follow a:hover { background: var(--forest); color: var(--ivory); }
+
+.sprig { width: 100%; max-width: 420px; color: #c5d1c6; margin-top: 8px; }
+
+/* ---------- Tablet / Desktop ---------- */
+@media (min-width: 900px) {
+  .ty { max-width: 640px; padding: 48px 24px 56px; gap: 22px; }
+  .ty__actions { grid-template-columns: 1fr 1fr; }
+}
