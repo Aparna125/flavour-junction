@@ -12,6 +12,7 @@ import AdminDashboard from "./pages/AdminDashboard.jsx";
 import AdminFeedback from "./pages/AdminFeedback.jsx";
 import AdminAnalytics from "./pages/AdminAnalytics.jsx";
 
+
 // Temporary placeholder until the remaining admin pages are built.
 const Placeholder = ({ title }) => (
   <section className="page">
@@ -32,13 +33,12 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/feedback/success" element={<ThankYou />} />
-
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-          <Route index element={<Navigate to="dashboard" replace />} />
-          <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="feedback" element={<AdminFeedback />} />
-          <Route path="analytics" element={<AdminAnalytics />} />
+        <Route index element={<Navigate to="dashboard" replace />} />
+        <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="feedback" element={<AdminFeedback />} />
+        <Route path="analytics" element={<AdminAnalytics />} />
         </Route>
       </Routes>
       {!isAdmin && <BottomNav />}

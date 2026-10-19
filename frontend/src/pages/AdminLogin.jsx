@@ -16,6 +16,7 @@ import {
   ArrowLeftIcon,
 } from "../components/Icons.jsx";
 import "./AdminLogin.css";
+import { adminLogin } from "../api/admin.js";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -51,6 +52,13 @@ export default function AdminLogin() {
     } finally {
       setSubmitting(false);
     }
+
+    try {
+  await adminLogin(identifier, password);   // your two input state values
+  navigate("/admin/dashboard");             // use your real dashboard route
+} catch (err) {
+  setServerError(err.message);              // use your existing error state
+}
   };
 
   return (
