@@ -13,17 +13,11 @@ import AdminFeedback from "./pages/AdminFeedback.jsx";
 import AdminAnalytics from "./pages/AdminAnalytics.jsx";
 
 
-// Temporary placeholder until the remaining admin pages are built.
-const Placeholder = ({ title }) => (
-  <section className="page">
-    <h1 className="placeholder-title">{title}</h1>
-  </section>
-);
-
 export default function App() {
-  const { pathname } = useLocation();
-  // Admin screens use their own layout, so hide the public header and tab bar there.
-  const isAdmin = pathname.startsWith("/admin");
+
+  const { pathname } = useLocation();  //To get the info about the url
+  
+  const isAdmin = pathname.startsWith("/admin"); // Admin screens use their own layout, so hide the public header and tab bar(bottomNav ) there.
 
   return (
     <>

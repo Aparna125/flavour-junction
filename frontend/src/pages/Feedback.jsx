@@ -2,22 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StarRating from "../components/StarRating.jsx";
 import { submitFeedback } from "../api/feedback.js";
-import {
-  UtensilsIcon,
-  BowlIcon,
-  DomeIcon,
-  SprayIcon,
-  SmileIcon,
-  StarBurstIcon,
-  ShieldIcon,
-  IdCardIcon,
-  AtIcon,
-  ArrowIcon,
-  CheckCircleIcon,
-} from "../components/Icons.jsx";
+import {UtensilsIcon,BowlIcon,DomeIcon,SprayIcon,SmileIcon,StarBurstIcon,ShieldIcon,IdCardIcon,AtIcon,ArrowIcon,CheckCircleIcon,} from "../components/Icons.jsx";
 import "./Feedback.css";
 
-const MAX_COMMENT = 500;
+const MAX_COMMENT = 500; //Maximum 500 characters for comment
 
 // `key` matches the field names the Express API expects.
 const categories = [
@@ -28,7 +16,7 @@ const categories = [
   { key: "overall_satisfaction", title: "Overall Satisfaction", hint: "Your complete dining experience", Icon: StarBurstIcon },
 ];
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //for a valid mailid
 
 export default function Feedback() {
   const navigate = useNavigate();

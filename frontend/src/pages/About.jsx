@@ -3,18 +3,7 @@ import { Link } from "react-router-dom";
 import aboutHero from "../Images/about-hero.jpg"
 import keralaFishFry from "../Images/kerala-fish-fry.jpg";
 import keralaMeenCurry from "../Images/kerala-meen-fish-curry.jpg";
-import {
-  LeafIcon,
-  UtensilsIcon,
-  ArrowIcon,
-  PenIcon,
-  ChartIcon,
-  EyeIcon,
-  SproutIcon,
-  BulbIcon,
-  HandHeartIcon,
-  ChatPlusIcon,
-} from "../components/Icons.jsx";
+import {LeafIcon,UtensilsIcon,ArrowIcon,PenIcon,ChartIcon,EyeIcon,SproutIcon,BulbIcon,HandHeartIcon,ChatPlusIcon,} from "../components/Icons.jsx";
 import "./About.css";
 
 const phases = [
@@ -98,11 +87,11 @@ export default function About() {
 
         <div className="craft__photos">
           <figure>
-            <img src={keralaMeenCurry} alt="Roasted meat with glazed carrots" />
+            <img src={keralaMeenCurry} alt="Kerala Meen Curry" />
             <figcaption>Kerala Meen Curry</figcaption>
           </figure>
           <figure>
-            <img src={keralaFishFry} alt="Candlelit dining room full of guests" />
+            <img src={keralaFishFry} alt="kerala fish curry" />
             <figcaption>Kerala Fish Fry</figcaption>
           </figure>
         </div>
